@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import axios from 'axios'
 
 const Login = props => {
   const [user, setUser] = useState({
@@ -7,17 +8,25 @@ const Login = props => {
   });
 
   const handleSubmit = e => {
-      e.preventDefault();
-      console.log(user);
-  }
+    e.preventDefault();
+   console.log(user)
+    axios
+      .post(`http://localhost:5000/api/login`, user)
+      .then(res => {
+          console.log("i am here", res)
+        localStorage.setItem("token", res.data.payload);
+      })
+      .catch(err => {
+        console.log("ERROR", err);
+      });
+  };
 
   const handleChange = e => {
-      setUser({
-          ...user,
-          [e.target.name]:e.target.value
-      })
-
-  }
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <div>

@@ -1,14 +1,27 @@
-import React, {userState} from "react";
-
-import Friends from "./Friends";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Friend from "./Friend";
 
 const FriendsList = props => {
-  const [friends, setFriends] = userState([]);
+  const [friends, setFriends] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/friends", {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      })
+      .then(res => {
+        setFriends(res.data);
+      })
+      .catch(err => console.log("error in get in Friends.js", err.res));
+  }, []);
 
   return (
     <div>
       {friends.map(friend => {
-        <Friends key={friend.id} friends={friend} />;
+        return <Friend key={friend.id} friend={friend} />;
       })}
     </div>
   );

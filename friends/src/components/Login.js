@@ -1,23 +1,43 @@
-import React from "react";
-
+import React, {useState} from "react";
 
 const Login = props => {
-    const [user, setUser] = useState({
-        username: "",
-        password: ""
-    });
+  const [user, setUser] = useState({
+    username: "",
+    password: ""
+  });
 
-    
-return(
+  const handleSubmit = e => {
+      e.preventDefault();
+      console.log(user);
+  }
+
+  const handleChange = e => {
+      setUser({
+          ...user,
+          [e.target.name]:e.target.value
+      })
+
+  }
+
+  return (
     <div>
-        <form>
-            <input  type="text" name="username" placeholder="Enter username"/>
-            <input type="password" name="password" placeholder="Enter Password" />
-            <button>Submit</button>
-        </form>
-
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          onChange={handleChange}
+        />
+        <button>Submit</button>
+      </form>
     </div>
-)
-}
+  );
+};
 
 export default Login;

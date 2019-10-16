@@ -21,7 +21,7 @@ const FriendsList = props => {
 
   return (
     <div>
-      <AddFriend/>
+      <AddFriend setFriends={setFriends}/>
       {friends.map(friend => {
         return <Friend key={friend.id} friend={friend} />;
       })}

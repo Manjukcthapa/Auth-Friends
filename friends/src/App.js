@@ -9,8 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Link to="/login">Login</Link>
-        <Link to="/friendslist">Friends</Link>
+        <nav>
+        <Link to="/login"><a>Login</a></Link>
+        <Link to="/friendslist"><a>Friends</a></Link>
+        </nav>
+
         <Route path="/login" component={Login} />
         <PrivateRoute path="/friendslist" component={props => <FriendsList />} />
       </div>

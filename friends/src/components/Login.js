@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./friends.css";
 
 const Login = props => {
   const [user, setUser] = useState({
@@ -28,19 +29,16 @@ const Login = props => {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className='maindiv'> 
-        <div>
-          <input
-            className="input"
-            type="text"
-            name="username"
-            placeholder="Enter username"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
+    <div className="login">
+      <form className='login-Form' onSubmit={handleSubmit}>
+        <input
+          className="input"
+          type="text"
+          name="username"
+          placeholder="Enter username"
+          onChange={handleChange}
+        />
+
         <input
           className="input"
           type="password"
@@ -48,12 +46,10 @@ const Login = props => {
           placeholder="Enter Password"
           onChange={handleChange}
         />
-        </div>
+
         <button className="button">Submit</button>
-        </div>
       </form>
     </div>
-  
   );
 };
 

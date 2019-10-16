@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: url('https://wallpaperplay.com/walls/full/2/d/a/41729.jpg')
 }
 
 .App-logo {
@@ -23,27 +24,20 @@
   to { transform: rotate(360deg); }
 }
 
-.input{
-  height:30px;
-  width:200px;
-  font:20px;
-  border:1px solid grey;
+
+
+nav{
+  background-color:black;
+  height:80px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: end;
+ 
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin-right: 80px;
   
 }
-
-.button{
-  height:20px;
-  width:30px;
-}
-
-.form{
-margin-top:200px;
-border:2px solid grey;
-width:400px;
-height:400px;
-}
-
-.maindiv{
-  margin-top: 200px;
-}
-

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Friend from "./Friend";
 import AddFriend from "./AddFriend";
+import "./friends.css";
 
 const FriendsList = props => {
   const [friends, setFriends] = useState([]);
@@ -31,7 +32,7 @@ const FriendsList = props => {
   };
 
   return (
-    <div>
+    <div className = "friendList">
       <AddFriend setFriends={setFriends} />
       {friends.map(friend => {
         return (

@@ -31,7 +31,8 @@ const AddFriend = (props) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <div className='AddFriends'>
+    <form  className='add-Friend-Form ' onSubmit={onSubmit}>
       <input
         type="text"
         name="name"
@@ -55,6 +56,7 @@ const AddFriend = (props) => {
       />
       <button type="submit">Add Friend!</button>
     </form>
+    </div>
   );
 };
 

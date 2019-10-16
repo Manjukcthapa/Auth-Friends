@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Friend from "./Friend";
-import AddFriend from "./AddFriend"
+import AddFriend from "./AddFriend";
 
 const FriendsList = props => {
   const [friends, setFriends] = useState([]);
@@ -19,11 +19,24 @@ const FriendsList = props => {
       .catch(err => console.log("error in get in Friends.js", err.res));
   }, []);
 
+  const deleteFriend = id => {
+    axios
+      .delete(`http://localhost:5000/api/friends/${id}`, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+      })
+      .then(res => setFriends(res.data))
+      .catch(err => console.log(err.response));
+  };
+
   return (
     <div>
-      <AddFriend setFriends={setFriends}/>
+      <AddFriend setFriends={setFriends} />
       {friends.map(friend => {
-        return <Friend key={friend.id} friend={friend} />;
+        return (
+          <Friend key={friend.id} friend={friend} deleteFriend={deleteFriend} />
+        );
       })}
     </div>
   );

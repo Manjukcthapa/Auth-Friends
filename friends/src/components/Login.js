@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 const Login = props => {
   const [user, setUser] = useState({
@@ -13,7 +13,7 @@ const Login = props => {
       .post(`http://localhost:5000/api/login`, user)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
-        props.history.push('/friendslist');
+        props.history.push("/friendslist");
       })
       .catch(err => {
         console.log("ERROR", err);
@@ -29,22 +29,31 @@ const Login = props => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className='maindiv'> 
+        <div>
+          <input
+            className="input"
+            type="text"
+            name="username"
+            placeholder="Enter username"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
         <input
-          type="text"
-          name="username"
-          placeholder="Enter username"
-          onChange={handleChange}
-        />
-        <input
+          className="input"
           type="password"
           name="password"
           placeholder="Enter Password"
           onChange={handleChange}
         />
-        <button>Submit</button>
+        </div>
+        <button className="button">Submit</button>
+        </div>
       </form>
     </div>
+  
   );
 };
 

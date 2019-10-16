@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axiosWithAuth from './axiosWithAuth'
 
 const AddFriend = () => {
   const [friendData, setFriendData] = useState({
@@ -17,17 +17,16 @@ const AddFriend = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-
-    axios()
-      .post("http://localhost:5000/api/friends", friendData)
+    axiosWithAuth()
+    .post("/friends", friendData)
       .then(res => {
-        console.log(e.target);
         setFriendData({
           ...friendData,
           name: "",
           age: "",
           email: ""
         });
+        console.log(friendData)
       })
       .catch(err => console.error(err));
   };

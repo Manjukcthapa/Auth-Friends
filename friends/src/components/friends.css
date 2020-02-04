@@ -1,0 +1,83 @@
+.login{
+    border: 2px solid grey;
+    width: 455px;
+    height: 200px;
+    margin: auto;
+    margin-top: 100px;
+    padding-top: 50px;
+    margin-bottom: 100px;
+    background: white;
+}
+
+.login-Form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 230px;
+    
+}
+
+.login-Form input {
+    height: 38px;
+    margin-bottom: 10px;
+}
+
+.login-Form button {
+    height: 42px;
+    background-color: #EB4F22;
+}
+  
+  Link {
+    color:black
+  }
+
+
+.AddFriends{
+    border: 2px solid grey;
+    width: 455px;
+    height: 200px;
+    margin: auto;
+    margin-top: 60px;
+    padding-top: 50px;
+    margin-bottom: 100px;
+    background: white;
+}
+
+.add-Friend-Form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 230px;
+    height:300px;
+}
+
+.add-Friend-Form input {
+    height: 38px;
+    margin-bottom: 10px;
+    font-size:14px;
+}
+
+.add-Friend-Form button {
+    height: 32px;
+    background-color: #EB4F22;
+    
+}
+
+.friends{
+    background-color: #EB4F22 ;
+    width: 40%;
+    margin: 10px;
+    opacity: 0.9;
+    border-radius: 5px;
+    margin-left: 380px;
+
+}
+
+.friendlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+   
+}
+

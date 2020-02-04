@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  background-image: url('https://wallpaperplay.com/walls/full/2/d/a/41729.jpg')
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+
+nav{
+  background-color:black;
+  height:80px;
+  padding: 10px;
+  font-size: 20px;
+  text-align: end;
+ 
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin-right: 80px;
+  
+}
